@@ -1,21 +1,35 @@
 
 <template>
-  <div class="place register">
-    場所出入口資料
-
+ 
+    <h2 style="color">場所出入口資料</h2>
+ <div class="place-register">
     <div
       v-for="(data, index) in placeData"
       :key="index"
       style="margin-bottom: 5%"
       @click="goToPlacePage(data.id)"
     >
-      {{ data.id }}<br>
-      {{ data.bid }}
+      <p>id:{{ data.id }}<br></p>
+      <p>bmid:{{ data.bid }}<br></p>
+      <hr color="white" size="1">
     </div>
 
     <!-- {{ placeData }} -->
   </div>
 </template>
+
+<style>
+hr {
+  width: 65%;
+  color: white;
+}
+.place-register {
+  background-color: rgb(195, 210, 236);
+  padding: 2%;
+  border-radius: 5%;
+  padding-top: 0.5cm;
+}
+</style>
 
 <script>
 // @ is an alias to /src

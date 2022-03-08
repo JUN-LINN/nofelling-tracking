@@ -3,17 +3,17 @@
 
   <form class="id8">
     <label for="new-todo-input"> 輸入場所ID: </label>
-    <input type="text" name="id" autocomplete="off" v-model="placedata.id" />
+    <input type="text" name="id" autocomplete="off" v-model="formObj.id" />
     <br />
     <label for="new-todo-input"> 輸入藍芽ID: </label>
-    <input type="text" name="bid" autocomplete="off" v-model="placedata.bid" />
+    <input type="text" name="bid" autocomplete="off" v-model="formObj.bid" />
     <br />
     <label for="new-todo-input"> 出入口名稱: </label>
     <input
       type="text"
       name="bname"
       autocomplete="off"
-      v-model="placedata.bname"
+      v-model="formObj.bname"
     />
     <br />
    
@@ -93,7 +93,7 @@ var sendd = {
 export default {
   data() {
     return {
-      placedata: {
+      formObj: {
         id: "",
         bid: "",
         bname: "",
@@ -103,11 +103,11 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      let formData = JSON.stringify(this.placedata);
+      let formData = JSON.stringify(this.formObj);
       console.log(formData);
-      sendd.id = this.placedata.id;
-      sendd.bid = this.placedata.bid;
-      sendd.bname = this.placedata.bname;
+      sendd.id = this.formObj.id;
+      sendd.bid = this.formObj.bid;
+      sendd.bname = this.formObj.bname;
       addbplace(sendd);
       console.log(88, sendd);
       alert("設定成功");

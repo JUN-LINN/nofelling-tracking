@@ -22,17 +22,17 @@ const dbFirestore = getFirestore(firebaseApp)
 
 export async function addbminiplace(data) {
   var addbmStatus = false;
+  console.log(25,data)
   // var createTime= new Date();
   try {
-    setDoc(doc(dbFirestore, "bminiplace", data.bmid.toString()), {
+    setDoc(doc(dbFirestore, "bminiplace", data.mid.toString()), {
       mid: data.mid, //id為資料表欄位名稱
       bmid: data.bmid,
-      mhwid: data.mhwid,
-      mabout: data.mabout
+      bmname: data.bmname
       // createTime:createTime.toISOString()
     });
     addbmStatus = true;
-  } catch {
+  } catch { 
     addbmStatus = false;
   }
   return addbmStatus

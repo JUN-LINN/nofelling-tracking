@@ -24,10 +24,10 @@ export async function addbrplace(data) {
   var addbrStatus = false;
   // var createTime= new Date();
   try {
-    setDoc(doc(dbFirestore, "brplace", Math.random().toString(36).slice(-8)), {
+    setDoc(doc(dbFirestore, "brplace", data.bid.toString()), {
       id: data.id, //id為資料表欄位名稱
       num:data.num,
-      bid: Math.random().toString(36).slice(-8),
+      bid: data.bid,
       con_address: data.con_address,
       //about:data.about
       // createTime:createTime.toISOString()

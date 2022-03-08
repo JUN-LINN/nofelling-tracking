@@ -93,7 +93,7 @@ updatePlace(neww1).then((res) => {
 liff
     .init({
         //use own liffid
-        liffId: "1656791281-3LekBYXZ",
+        liffId: "1656791281-mbN0x8lP",
     })
     .then(async () => {
         //start to use liff's api

@@ -2,24 +2,21 @@
   <h2 class="title9">附屬場所出入口裝置設定</h2>
   <form class="id9">
     <label for="new-todo-input"> 輸入附屬場所ID: </label>
-    <input type="text" name="mid" autocomplete="off" v-model="formObj.mid" />
+    <input type="text" name="mid" autocomplete="off" v-model="setdata.mid" />
     <br />
     <label for="new-todo-input"> 輸入附屬場所藍芽ID: </label>
-    <input type="text" name="bmid" autocomplete="off" v-model="formObj.bmid" />
+    <input type="text" name="bmid" autocomplete="off" v-model="setdata.bmid" />
     <br />
     <label for="new-todo-input"> 出入口名稱: </label>
-    <input
+    <input style="width:70%"
       type="text"
       name="bmname"
       autocomplete="off"
-      v-model="formObj.bmname"
+      v-model="setdata.bmname"
     />
     <br />
     <div>
-      <button class="home9" v-on:click="gohome">回主頁</button>
-    </div>
-    <div>
-      <button class="update9" @click="onSubmit($event)">更新</button>
+      <button class="update9" @click="onSubmit($event)">設定</button>
     </div>
   </form>
 </template>
@@ -76,8 +73,8 @@ label {
 }
 .update9 {
   position: absolute;
-  top: 180px;
-  left: 50%;
+  top: 190px;
+  left: 45%;
   width: 55px;
   height: 35px;
   font-size: 10px;
@@ -90,12 +87,12 @@ import { /*getPlaceList,*/ addbminiplace } from "../model/bminiplace";
 var sendd = {
   mid: "",
   bmid: "",
-  bmname: "",
+  bmname: ""
 };
 export default {
   data() {
     return {
-      formObj: {
+      setdata: {
         mid: "",
         bmid: "",
         bmname: "",
@@ -105,13 +102,15 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      let formData = JSON.stringify(this.formObj);
+      let formData = JSON.stringify(this.setdata);
       console.log(formData);
-      sendd.mid = this.formObj.mid;
-      sendd.bmid = this.formObj.bmid;
-      sendd.bmname = this.formObj.bmname;
+      sendd.mid = this.setdata.mid;
+      sendd.bmid = this.setdata.bmid;
+      sendd.bmname = this.setdata.bmname;
       addbminiplace(sendd);
       console.log(88, sendd);
+      alert('設定成功')
+      setTimeout("location.href='/'", 500);
     },
   },
   //setup(){

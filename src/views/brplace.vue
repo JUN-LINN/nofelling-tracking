@@ -81,6 +81,7 @@ var sendd = {
   id: "",
   num: "",
   con_address: "",
+  bid:Math.random().toString(36).slice(-8)
 };
 export default {
   data() {

@@ -13,7 +13,6 @@
     <label for="new-todo-input"> 裝置數量: </label>
     <input type="text" name="mnum" autocomplete="off" v-model="placedata.mnum" />
     <br />
-
     <label for="new-todo-input"> 寄送地址: </label>
     <input
       type="text"
@@ -21,14 +20,12 @@
       autocomplete="off"
       v-model="placedata.mcon_address"
     />
-
     <br />
     <div>
       <button
         class="home2"
         value="/bmHome.vue"
-        @click="onSubmit($event)"
-      >
+        @click="onSubmit($event)" >
         送出
       </button>
     </div>
@@ -121,7 +118,8 @@ export default {
       addbrminiplace(sendd);
       // addbrminiplace()
       console.log(88, sendd);
-      alert("uuu")
+      alert("新增成功");
+      setTimeout("location.href='/bmHome'", 500);
     },
   },
   //setup(){

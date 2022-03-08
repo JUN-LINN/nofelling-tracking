@@ -28,7 +28,7 @@ export async function addbrminiplace(data) {
   console.log(28,data)
   try {
     setDoc(doc(dbFirestore, "brminiplace", data.bmid.toString()), {
-      bmid:data.bmid,
+      bmid: data.bmid,
       mid: data.mid,
       mnum: data.mnum,
       mcon_address: data.mcon_address
